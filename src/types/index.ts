@@ -66,3 +66,33 @@ export interface ContentIdea {
   core_message: string;
   cta: string;
 }
+
+export interface ViralScore {
+  overall: number;
+  hook_strength: number;
+  retention_potential: number;
+  cta_effectiveness: number;
+  tips: string[];
+}
+
+export interface ScriptTemplate {
+  id: string;
+  name: string;
+  description: string;
+  emoji: string;
+  structure: string;
+  category: string;
+}
+
+export interface TrendingTopic {
+  title: string;
+  category: string;
+  description: string;
+  popularity: 'hot' | 'rising' | 'steady';
+}
+
+export interface HashtagSet {
+  hashtags: string[];
+  high_volume: string[];
+  niche: string[];
+}

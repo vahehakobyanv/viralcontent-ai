@@ -3,7 +3,7 @@ import { getOpenAI } from "@/lib/openai";
 
 export async function POST(req: NextRequest) {
   try {
-    const { topic, language, tone, viralMode } = await req.json();
+    const { topic, language, tone, viralMode, templateId } = await req.json();
 
     const langInstruction =
       language === "ru"
@@ -12,6 +12,10 @@ export async function POST(req: NextRequest) {
 
     const viralInstruction = viralMode
       ? "Make hooks EXTREMELY controversial, provocative, and attention-grabbing. Use pattern interrupts. Challenge common beliefs. Make people NEED to watch."
+      : "";
+
+    const templateInstruction = templateId
+      ? `The user wants to use a specific template format: "${templateId}". Structure the ideas to follow that template pattern (e.g. if "pov" then use POV format, if "story-time" use storytelling arc, if "three-things" use listicle format, if "hot-take" use controversial opinion format, if "day-in-life" use daily routine format).`
       : "";
 
     const response = await getOpenAI().chat.completions.create({
@@ -23,6 +27,7 @@ export async function POST(req: NextRequest) {
 
 ${langInstruction}
 ${viralInstruction}
+${templateInstruction}
 
 Tone: ${tone}
 

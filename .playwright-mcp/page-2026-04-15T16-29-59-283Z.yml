@@ -1,0 +1,271 @@
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e6]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - link "Supabase" [ref=e9] [cursor=pointer]:
+            - /url: /dashboard/org/rvqmgqborodtbjtcitin
+            - img "Supabase" [ref=e10]
+          - generic [ref=e11]:
+            - img [ref=e135]
+            - generic [ref=e137]:
+              - link "vahehakobyanv org Free" [ref=e138] [cursor=pointer]:
+                - /url: /dashboard/org/rvqmgqborodtbjtcitin
+                - img [ref=e139]
+                - generic [ref=e149]: vahehakobyanv org
+                - generic [ref=e150]: Free
+              - button [ref=e151] [cursor=pointer]:
+                - img [ref=e153]
+            - generic [ref=e12]:
+              - img [ref=e14]
+              - generic [ref=e156]:
+                - link "videocreator" [ref=e157] [cursor=pointer]:
+                  - /url: /dashboard/project/qhyauvqdzheswgsiahtk
+                  - img [ref=e158]
+                  - generic "videocreator" [ref=e161]
+                - button [ref=e162] [cursor=pointer]:
+                  - img [ref=e164]
+              - img [ref=e168]
+              - generic [ref=e170]:
+                - link "main Production" [ref=e171] [cursor=pointer]:
+                  - /url: /dashboard/project/qhyauvqdzheswgsiahtk
+                  - generic "main" [ref=e172]
+                  - generic [ref=e173]: Production
+                - button [ref=e174] [cursor=pointer]:
+                  - img [ref=e176]
+          - button "Connect" [ref=e18] [cursor=pointer]:
+            - img [ref=e20]
+            - generic [ref=e22]: Connect
+        - generic [ref=e23]:
+          - generic [ref=e25] [cursor=pointer]: Feedback
+          - generic [ref=e26]:
+            - button "Search..." [ref=e27] [cursor=pointer]:
+              - generic [ref=e28]:
+                - img [ref=e29]
+                - paragraph [ref=e32]: Search...
+              - generic [ref=e34]: ⌘ K
+            - button [ref=e35] [cursor=pointer]:
+              - img [ref=e37]
+            - button [ref=e41] [cursor=pointer]:
+              - img [ref=e43]
+            - button [ref=e45] [cursor=pointer]:
+              - img [ref=e47]
+            - button [ref=e49] [cursor=pointer]:
+              - img [ref=e53]
+          - button "vahehakobyanv" [ref=e179] [cursor=pointer]:
+            - img "vahehakobyanv" [ref=e180]
+    - generic [ref=e61]:
+      - generic [ref=e65]:
+        - list [ref=e68]:
+          - generic [ref=e69]:
+            - listitem [ref=e70]:
+              - link "Project Overview" [ref=e71] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk
+                - img [ref=e72]
+                - generic: Project Overview
+            - listitem [ref=e74]:
+              - link "Table Editor" [ref=e181] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/editor
+                - img [ref=e182]
+                - generic: Table Editor
+            - listitem [ref=e75]:
+              - link "SQL Editor" [ref=e184] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/sql
+                - img [ref=e185]
+                - generic: SQL Editor
+          - generic [ref=e76]:
+            - listitem [ref=e77]:
+              - link "Database" [ref=e187] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/database/schemas
+                - img [ref=e188]
+                - generic: Database
+            - listitem [ref=e78]:
+              - link "Authentication" [ref=e192] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/auth/users
+                - img [ref=e193]
+                - generic: Authentication
+            - listitem [ref=e79]:
+              - link "Storage" [ref=e195] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/files
+                - img [ref=e196]
+                - generic: Storage
+            - listitem [ref=e80]:
+              - link "Edge Functions" [ref=e81] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/functions
+                - img [ref=e82]
+                - generic: Edge Functions
+            - listitem [ref=e87]:
+              - link "Realtime" [ref=e198] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/realtime/inspector
+                - img [ref=e199]
+                - generic: Realtime
+          - generic [ref=e88]:
+            - listitem [ref=e90]:
+              - link "Advisors" [ref=e201] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/advisors/security
+                - img [ref=e202]
+                - generic: Advisors
+            - listitem [ref=e91]:
+              - link "Observability" [ref=e204] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/observability
+                - img [ref=e205]
+                - generic: Observability
+            - listitem [ref=e92]:
+              - link "Logs" [ref=e93] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/logs/explorer
+                - img [ref=e94]
+                - generic: Logs
+            - listitem [ref=e95]:
+              - link "Integrations" [ref=e213] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/integrations
+                - img [ref=e214]
+                - generic: Integrations
+          - listitem [ref=e97]:
+            - link "Project Settings" [ref=e98] [cursor=pointer]:
+              - /url: /dashboard/project/qhyauvqdzheswgsiahtk/settings/general
+              - img [ref=e99]
+              - generic: Project Settings
+        - button [ref=e104] [cursor=pointer]:
+          - img [ref=e106]
+      - generic [ref=e113]:
+        - generic [ref=e217]:
+          - heading "SQL Editor" [level=4] [ref=e219]
+          - generic [ref=e221]:
+            - generic [ref=e222]:
+              - generic [ref=e223]:
+                - generic [ref=e225]:
+                  - generic [ref=e226]: Search queries
+                  - textbox "Search queries..." [ref=e227]
+                  - button [ref=e228] [cursor=pointer]:
+                    - img [ref=e229]
+                  - img [ref=e232]
+                - button [ref=e235] [cursor=pointer]:
+                  - img [ref=e237]
+              - button "Shared" [ref=e240] [cursor=pointer]:
+                - img [ref=e241]
+                - generic [ref=e243]: Shared
+              - button "Favorites" [ref=e246] [cursor=pointer]:
+                - img [ref=e247]
+                - generic [ref=e249]: Favorites
+              - generic [ref=e251]:
+                - button "PRIVATE (1)" [expanded] [ref=e374] [cursor=pointer]:
+                  - img [ref=e253]
+                  - generic [ref=e255]: PRIVATE (1)
+                - tree "private-snippets" [ref=e375]:
+                  - generic "Media projects schema for users" [ref=e515] [cursor=pointer]:
+                    - generic [ref=e377]:
+                      - img [ref=e378]
+                      - generic [ref=e384]: Media projects schema for users
+              - generic [ref=e262]:
+                - button "Community" [expanded] [ref=e263] [cursor=pointer]:
+                  - img [ref=e264]
+                  - generic [ref=e266]: Community
+                - generic [ref=e267]:
+                  - link "templates" [ref=e268] [cursor=pointer]:
+                    - /url: /dashboard/project/qhyauvqdzheswgsiahtk/sql/templates
+                    - img [ref=e269]
+                    - text: templates
+                  - link "quickstarts" [ref=e271] [cursor=pointer]:
+                    - /url: /dashboard/project/qhyauvqdzheswgsiahtk/sql/quickstarts
+                    - img [ref=e272]
+                    - text: quickstarts
+            - button "View running queries" [ref=e276] [cursor=pointer]:
+              - generic [ref=e277]: View running queries
+        - separator [ref=e117]:
+          - img [ref=e119]
+        - main [ref=e128]:
+          - generic [ref=e278]:
+            - generic [ref=e279]:
+              - generic [ref=e280]:
+                - button [ref=e281] [cursor=pointer]:
+                  - img [ref=e282]
+                - tablist [ref=e285]:
+                  - button "Media projects schema for users" [ref=e516] [cursor=pointer]:
+                    - tab "Media projects schema for users" [selected] [ref=e517]:
+                      - img [ref=e388]
+                      - generic [ref=e395]: Media projects schema for users
+                      - button [ref=e396]:
+                        - img [ref=e397]
+                    - separator [ref=e401]
+                  - button [ref=e402] [cursor=pointer]:
+                    - img [ref=e403]
+              - status [ref=e296]
+            - generic [ref=e299]:
+              - code [ref=e306]:
+                - generic [ref=e307]:
+                  - generic [ref=e309]:
+                    - generic [ref=e530]: "1"
+                    - generic [ref=e532]: "2"
+                    - generic [ref=e534]: "3"
+                    - generic [ref=e536]: "4"
+                    - generic [ref=e538]: "5"
+                    - generic [ref=e540]: "6"
+                    - generic [ref=e542]: "7"
+                    - generic [ref=e544]: "8"
+                    - generic [ref=e546]: "9"
+                    - generic [ref=e548]: "10"
+                    - generic [ref=e550]: "11"
+                    - generic [ref=e552]: "12"
+                    - generic [ref=e554]: "13"
+                    - generic [ref=e556]: "14"
+                    - generic [ref=e558]: "15"
+                    - generic [ref=e561]: "16"
+                  - generic [ref=e316]:
+                    - generic [ref=e583]: "-- Enable RLS"
+                    - generic [ref=e585]: ALTER TABLE projects ENABLE ROW LEVEL SECURITY;
+                    - generic [ref=e587]: ALTER TABLE scripts ENABLE ROW LEVEL SECURITY;
+                    - generic [ref=e589]: ALTER TABLE voices ENABLE ROW LEVEL SECURITY;
+                    - generic [ref=e591]: ALTER TABLE subtitles ENABLE ROW LEVEL SECURITY;
+                    - generic [ref=e593]: ALTER TABLE videos ENABLE ROW LEVEL SECURITY;
+                    - generic [ref=e595]: ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
+                    - generic [ref=e598]: "-- RLS Policies"
+                    - generic [ref=e600]: CREATE POLICY "Users can view own projects" ON projects FOR SELECT USING (auth.uid() = user_id);
+                    - generic [ref=e602]: CREATE POLICY "Users can insert own projects" ON projects FOR INSERT WITH CHECK (auth.uid() = user_id);
+                    - generic [ref=e604]: CREATE POLICY "Users can update own projects" ON projects FOR UPDATE USING (auth.uid() = user_id);
+                    - generic [ref=e606]: CREATE POLICY "Users can delete own projects" ON projects FOR DELETE USING (auth.uid() = user_id);
+                    - generic [ref=e609]: CREATE POLICY "Users can view own scripts" ON scripts FOR SELECT USING (project_id IN (SELECT id FROM
+                    - generic [ref=e611]: projects WHERE user_id = auth.uid()));
+                    - generic [ref=e613]: CREATE POLICY "Users can insert own scripts" ON scripts FOR INSERT WITH CHECK (project_id IN (SELECT id
+                    - generic [ref=e615]: FROM projects WHERE user_id = auth.uid()));
+                  - textbox "Editor content" [active] [ref=e320]: "-- Enable RLS ALTER TABLE projects ENABLE ROW LEVEL SECURITY; ALTER TABLE scripts ENABLE ROW LEVEL SECURITY; ALTER TABLE voices ENABLE ROW LEVEL SECURITY; ALTER TABLE subtitles ENABLE ROW LEVEL SECURITY; ALTER TABLE videos ENABLE ROW LEVEL SECURITY; ALTER TABLE profiles ENABLE ROW LEVEL SECURITY; -- RLS Policies CREATE POLICY \"Users can view own projects\" ON projects FOR SELECT USING (auth.uid() = user_id);"
+              - separator [ref=e321]:
+                - img [ref=e323]
+              - generic [ref=e332]:
+                - tablist [ref=e333]:
+                  - generic [ref=e334]:
+                    - tab "Results" [selected] [ref=e335] [cursor=pointer]:
+                      - generic [ref=e336]: Results
+                    - tab "Explain" [ref=e337] [cursor=pointer]:
+                      - generic [ref=e338]: Explain
+                    - tab "Chart" [ref=e339] [cursor=pointer]:
+                      - generic [ref=e340]: Chart
+                    - button "Export" [disabled]:
+                      - generic: Export
+                      - generic:
+                        - img
+                  - generic [ref=e341]:
+                    - button [ref=e342] [cursor=pointer]:
+                      - img [ref=e344]
+                    - generic [ref=e349]:
+                      - generic [ref=e350] [cursor=pointer]:
+                        - generic [ref=e351]: Source
+                        - button "Primary database" [ref=e352]:
+                          - generic [ref=e353]: Primary database
+                          - img [ref=e355]
+                      - button "Role postgres" [ref=e357] [cursor=pointer]:
+                        - generic [ref=e359]:
+                          - generic [ref=e360]: Role
+                          - generic [ref=e361]: postgres
+                          - img [ref=e362]
+                      - button "Run ⌘ ↵" [ref=e364] [cursor=pointer]:
+                        - generic [ref=e365]: Run
+                        - generic [ref=e622]: ⌘ ↵
+                - paragraph [ref=e623]: Success. No rows returned
+              - generic "Table grid footer" [ref=e624]:
+                - button "0 row" [ref=e625] [cursor=pointer]:
+                  - paragraph [ref=e626]:
+                    - generic [ref=e627]: 0 row
+  - alert [ref=e133]: SQL Editor | videocreator | vahehakobyanv org | Supabase
+  - generic [ref=e372]:
+    - alert
+    - alert

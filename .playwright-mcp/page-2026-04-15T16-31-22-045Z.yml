@@ -1,0 +1,312 @@
+- generic:
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - banner:
+            - generic:
+              - generic:
+                - link:
+                  - /url: /dashboard/org/rvqmgqborodtbjtcitin
+                  - img
+                - generic:
+                  - generic:
+                    - img
+                  - generic:
+                    - link:
+                      - /url: /dashboard/org/rvqmgqborodtbjtcitin
+                      - img
+                      - generic: vahehakobyanv org
+                      - generic: Free
+                    - button:
+                      - generic:
+                        - img
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - link:
+                        - /url: /dashboard/project/qhyauvqdzheswgsiahtk
+                        - img
+                        - generic: videocreator
+                      - button:
+                        - generic:
+                          - img
+                    - generic:
+                      - img
+                    - generic:
+                      - link:
+                        - /url: /dashboard/project/qhyauvqdzheswgsiahtk
+                        - generic: main
+                        - generic: Production
+                      - button:
+                        - generic:
+                          - img
+                - button [ref=e418] [cursor=pointer]:
+                  - img [ref=e20]
+                  - generic [ref=e22]: Connect
+              - generic:
+                - generic:
+                  - generic: Feedback
+                - generic:
+                  - button:
+                    - generic:
+                      - img
+                      - paragraph: Search...
+                    - generic:
+                      - generic: ⌘ K
+                  - button [ref=e35] [cursor=pointer]:
+                    - img [ref=e37]
+                  - button [ref=e41] [cursor=pointer]:
+                    - img [ref=e43]
+                  - button [ref=e45] [cursor=pointer]:
+                    - img [ref=e47]
+                  - button [ref=e49] [cursor=pointer]:
+                    - img [ref=e53]
+                - button [ref=e419] [cursor=pointer]:
+                  - img [ref=e420]
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - list:
+                      - generic:
+                        - listitem:
+                          - link:
+                            - /url: /dashboard/project/qhyauvqdzheswgsiahtk
+                            - img
+                        - listitem:
+                          - link:
+                            - /url: /dashboard/project/qhyauvqdzheswgsiahtk/editor
+                            - img
+                        - listitem:
+                          - link:
+                            - /url: /dashboard/project/qhyauvqdzheswgsiahtk/sql
+                            - img
+                      - generic:
+                        - listitem:
+                          - link:
+                            - /url: /dashboard/project/qhyauvqdzheswgsiahtk/database/schemas
+                            - img
+                        - listitem:
+                          - link:
+                            - /url: /dashboard/project/qhyauvqdzheswgsiahtk/auth/users
+                            - img
+                        - listitem:
+                          - link:
+                            - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/files
+                            - img
+                        - listitem:
+                          - link:
+                            - /url: /dashboard/project/qhyauvqdzheswgsiahtk/functions
+                            - img
+                        - listitem:
+                          - link:
+                            - /url: /dashboard/project/qhyauvqdzheswgsiahtk/realtime/inspector
+                            - img
+                      - generic:
+                        - generic:
+                          - listitem:
+                            - link:
+                              - /url: /dashboard/project/qhyauvqdzheswgsiahtk/advisors/security
+                              - img
+                        - listitem:
+                          - link:
+                            - /url: /dashboard/project/qhyauvqdzheswgsiahtk/observability
+                            - img
+                        - listitem:
+                          - link:
+                            - /url: /dashboard/project/qhyauvqdzheswgsiahtk/logs/explorer
+                            - img
+                        - listitem:
+                          - link:
+                            - /url: /dashboard/project/qhyauvqdzheswgsiahtk/integrations
+                            - img
+                      - generic:
+                        - listitem:
+                          - link:
+                            - /url: /dashboard/project/qhyauvqdzheswgsiahtk/settings/general
+                            - img
+                - generic:
+                  - generic:
+                    - button:
+                      - generic:
+                        - img
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - heading [level=4]: Storage
+                              - generic:
+                                - menu [disabled]:
+                                  - list:
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic: Manage
+                                        - link [disabled]:
+                                          - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/files
+                                          - menuitem [disabled]:
+                                            - generic:
+                                              - generic:
+                                                - paragraph: Files
+                                        - link [disabled]:
+                                          - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/analytics
+                                          - menuitem [disabled]:
+                                            - generic:
+                                              - generic:
+                                                - paragraph: Analytics
+                                                - generic: New
+                                        - link [disabled]:
+                                          - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/vectors
+                                          - menuitem [disabled]:
+                                            - generic:
+                                              - generic:
+                                                - paragraph: Vectors
+                                      - generic:
+                                        - generic:
+                                          - generic: Configuration
+                                        - link [disabled]:
+                                          - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/s3
+                                          - menuitem [disabled]:
+                                            - generic:
+                                              - paragraph: S3
+                      - separator [disabled]:
+                        - generic:
+                          - img
+                      - generic:
+                        - generic:
+                          - main:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading [level=1]: Files
+                                    - generic: General file storage for most types of digital content
+                                  - generic:
+                                    - link:
+                                      - /url: https://supabase.com/docs/guides/storage/buckets/fundamentals
+                                      - generic:
+                                        - img
+                                      - generic: Docs
+                              - generic:
+                                - generic:
+                                  - navigation:
+                                    - menu:
+                                      - listitem:
+                                        - link:
+                                          - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/files
+                                          - text: Buckets
+                                      - listitem:
+                                        - link:
+                                          - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/files/settings
+                                          - text: Settings
+                                      - listitem:
+                                        - link:
+                                          - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/files/policies
+                                          - text: Policies
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - group:
+                                        - textbox:
+                                          - /placeholder: Search for a bucket
+                                        - group:
+                                          - img
+                                      - button:
+                                        - generic:
+                                          - img
+                                        - generic: Sorted by created at
+                                    - button [ref=e421] [cursor=pointer]:
+                                      - img [ref=e382]
+                                      - generic [ref=e383]: New bucket
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - table:
+                                          - rowgroup:
+                                            - row:
+                                              - columnheader:
+                                                - generic: Icon
+                                              - columnheader: Name
+                                              - columnheader: Policies
+                                              - columnheader: File size limit
+                                              - columnheader: Allowed MIME types
+                                              - columnheader:
+                                                - generic: Actions
+                                          - rowgroup:
+                                            - row:
+                                              - cell:
+                                                - img
+                                              - cell:
+                                                - generic:
+                                                  - paragraph: audio
+                                                  - generic: Public
+                                              - cell:
+                                                - paragraph: "0"
+                                              - cell:
+                                                - paragraph: Unset (50 MB)
+                                              - cell:
+                                                - paragraph: Any
+                                              - cell:
+                                                - generic:
+                                                  - img
+                                                - button: Go to bucket details
+  - generic:
+    - alert: Files | Storage | videocreator | vahehakobyanv org | Supabase
+  - dialog "Create file bucket" [active] [ref=e423]:
+    - heading "Create file bucket" [level=2] [ref=e425]
+    - generic [ref=e427]:
+      - generic [ref=e430]:
+        - generic [ref=e431]:
+          - generic [ref=e482]: Bucket name
+          - generic [ref=e434]: Cannot be changed after creation
+        - textbox "Bucket name" [ref=e437]:
+          - /placeholder: Enter bucket name
+          - text: videos
+      - generic [ref=e439]:
+        - generic [ref=e441]:
+          - generic [ref=e442]:
+            - switch "Public bucket" [checked] [ref=e443] [cursor=pointer]
+            - checkbox [checked]
+          - generic [ref=e444]:
+            - generic [ref=e483]: Public bucket
+            - generic [ref=e447]: Allow anyone to read objects without authorization
+        - alert [ref=e484]:
+          - img [ref=e485]
+          - generic [ref=e488]:
+            - heading "Public buckets are not protected" [level=5] [ref=e489]
+            - paragraph [ref=e491]: Users can read objects in public buckets without any authorization. Row level security (RLS) policies are still required for other operations such as object uploads and deletes.
+      - generic [ref=e451]:
+        - generic [ref=e452]:
+          - switch "Restrict file size" [ref=e453] [cursor=pointer]
+          - checkbox
+        - generic [ref=e454]:
+          - generic [ref=e492]: Restrict file size
+          - generic [ref=e457]: Prevent uploading of files larger than a specified limit
+      - generic [ref=e461]:
+        - generic [ref=e462]:
+          - switch "Restrict MIME types" [ref=e463] [cursor=pointer]
+          - checkbox
+        - generic [ref=e464]:
+          - generic [ref=e493]: Restrict MIME types
+          - generic [ref=e467]: Allow only certain types of files to be uploaded
+    - generic [ref=e468]:
+      - button "Cancel" [ref=e469] [cursor=pointer]:
+        - generic [ref=e470]: Cancel
+      - button "Create" [ref=e471] [cursor=pointer]:
+        - generic [ref=e472]: Create
+    - button "Close" [ref=e473] [cursor=pointer]:
+      - img [ref=e474]
+      - generic [ref=e477]: Close

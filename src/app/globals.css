@@ -158,3 +158,82 @@
 .glow-text {
   text-shadow: 0 0 20px oklch(0.7 0.25 330 / 50%);
 }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(-100%) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes wordReveal {
+  0% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 10px oklch(0.7 0.25 330 / 20%); }
+  50% { box-shadow: 0 0 30px oklch(0.7 0.25 330 / 50%); }
+}
+
+@keyframes scoreCount {
+  from { stroke-dashoffset: 283; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in { animation: fadeIn 0.4s ease-out; }
+.animate-slide-up { animation: slideUp 0.4s ease-out; }
+.animate-slide-down { animation: slideDown 0.3s ease-out; }
+.animate-pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+.animate-word-reveal { animation: wordReveal 0.3s ease-out forwards; }
+
+/* Caption styles */
+.caption-classic {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.9), -1px -1px 2px rgba(0,0,0,0.9);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.caption-bold {
+  color: white;
+  text-shadow: 3px 3px 0 oklch(0.7 0.25 60), -1px -1px 0 oklch(0.7 0.25 60);
+  font-weight: 900;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.caption-gradient {
+  background: linear-gradient(135deg, oklch(0.7 0.25 330), oklch(0.7 0.2 280), oklch(0.65 0.25 200));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  font-size: 1.75rem;
+}
+
+.caption-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+  font-weight: 900;
+  font-size: 2rem;
+}

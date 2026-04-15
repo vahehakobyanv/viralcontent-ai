@@ -1,0 +1,238 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e6]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - link "Supabase" [ref=e9] [cursor=pointer]:
+            - /url: /dashboard/org/rvqmgqborodtbjtcitin
+            - img "Supabase" [ref=e10]
+          - generic [ref=e11]:
+            - img [ref=e133]
+            - generic [ref=e135]:
+              - link "vahehakobyanv org Free" [ref=e136] [cursor=pointer]:
+                - /url: /dashboard/org/rvqmgqborodtbjtcitin
+                - img [ref=e137]
+                - generic [ref=e147]: vahehakobyanv org
+                - generic [ref=e148]: Free
+              - button [ref=e149] [cursor=pointer]:
+                - img [ref=e151]
+            - generic [ref=e12]:
+              - img [ref=e14]
+              - generic [ref=e154]:
+                - link "videocreator" [ref=e155] [cursor=pointer]:
+                  - /url: /dashboard/project/qhyauvqdzheswgsiahtk
+                  - img [ref=e156]
+                  - generic "videocreator" [ref=e159]
+                - button [ref=e160] [cursor=pointer]:
+                  - img [ref=e162]
+              - img [ref=e166]
+              - generic [ref=e168]:
+                - link "main Production" [ref=e169] [cursor=pointer]:
+                  - /url: /dashboard/project/qhyauvqdzheswgsiahtk
+                  - generic "main" [ref=e170]
+                  - generic [ref=e171]: Production
+                - button [ref=e172] [cursor=pointer]:
+                  - img [ref=e174]
+          - button "Connect" [ref=e494] [cursor=pointer]:
+            - img [ref=e20]
+            - generic [ref=e22]: Connect
+        - generic [ref=e23]:
+          - generic [ref=e25] [cursor=pointer]: Feedback
+          - generic [ref=e26]:
+            - button "Search..." [ref=e27] [cursor=pointer]:
+              - generic [ref=e28]:
+                - img [ref=e29]
+                - paragraph [ref=e32]: Search...
+              - generic [ref=e34]: ⌘ K
+            - button [ref=e35] [cursor=pointer]:
+              - img [ref=e37]
+            - button [ref=e41] [cursor=pointer]:
+              - img [ref=e43]
+            - button [ref=e45] [cursor=pointer]:
+              - img [ref=e47]
+            - button [ref=e49] [cursor=pointer]:
+              - img [ref=e53]
+          - button "vahehakobyanv" [ref=e495] [cursor=pointer]:
+            - img "vahehakobyanv" [ref=e496]
+    - generic [ref=e59]:
+      - generic [ref=e63]:
+        - list [ref=e66]:
+          - generic [ref=e67]:
+            - listitem [ref=e68]:
+              - link "Project Overview" [ref=e69] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk
+                - img [ref=e70]
+                - generic: Project Overview
+            - listitem [ref=e72]:
+              - link "Table Editor" [ref=e177] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/editor
+                - img [ref=e178]
+                - generic: Table Editor
+            - listitem [ref=e73]:
+              - link "SQL Editor" [ref=e180] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/sql
+                - img [ref=e181]
+                - generic: SQL Editor
+          - generic [ref=e74]:
+            - listitem [ref=e75]:
+              - link "Database" [ref=e183] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/database/schemas
+                - img [ref=e184]
+                - generic: Database
+            - listitem [ref=e76]:
+              - link "Authentication" [ref=e188] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/auth/users
+                - img [ref=e189]
+                - generic: Authentication
+            - listitem [ref=e77]:
+              - link "Storage" [ref=e191] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/files
+                - img [ref=e192]
+                - generic: Storage
+            - listitem [ref=e78]:
+              - link "Edge Functions" [ref=e79] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/functions
+                - img [ref=e80]
+                - generic: Edge Functions
+            - listitem [ref=e85]:
+              - link "Realtime" [ref=e194] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/realtime/inspector
+                - img [ref=e195]
+                - generic: Realtime
+          - generic [ref=e86]:
+            - listitem [ref=e88]:
+              - link "Advisors" [ref=e197] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/advisors/security
+                - img [ref=e198]
+                - generic: Advisors
+            - listitem [ref=e89]:
+              - link "Observability" [ref=e200] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/observability
+                - img [ref=e201]
+                - generic: Observability
+            - listitem [ref=e90]:
+              - link "Logs" [ref=e91] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/logs/explorer
+                - img [ref=e92]
+                - generic: Logs
+            - listitem [ref=e93]:
+              - link "Integrations" [ref=e209] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/integrations
+                - img [ref=e210]
+                - generic: Integrations
+          - listitem [ref=e95]:
+            - link "Project Settings" [ref=e96] [cursor=pointer]:
+              - /url: /dashboard/project/qhyauvqdzheswgsiahtk/settings/general
+              - img [ref=e97]
+              - generic: Project Settings
+        - button [ref=e102] [cursor=pointer]:
+          - img [ref=e104]
+      - generic [ref=e111]:
+        - generic [ref=e213]:
+          - heading "Storage" [level=4] [ref=e215]
+          - menu "Sidebar" [disabled] [ref=e217]:
+            - list [ref=e218]:
+              - generic [ref=e219]:
+                - generic [ref=e220]:
+                  - generic [ref=e222]: Manage
+                  - link "Files" [disabled] [ref=e223] [cursor=pointer]:
+                    - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/files
+                    - menuitem "Files" [disabled] [ref=e224]:
+                      - paragraph [ref=e227]: Files
+                  - link "Analytics New" [disabled] [ref=e228] [cursor=pointer]:
+                    - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/analytics
+                    - menuitem "Analytics New" [disabled] [ref=e229]:
+                      - generic [ref=e231]:
+                        - paragraph [ref=e232]: Analytics
+                        - generic [ref=e233]: New
+                  - link "Vectors" [disabled] [ref=e234] [cursor=pointer]:
+                    - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/vectors
+                    - menuitem "Vectors" [disabled] [ref=e235]:
+                      - paragraph [ref=e238]: Vectors
+                - generic [ref=e240]:
+                  - generic [ref=e242]: Configuration
+                  - link "S3" [disabled] [ref=e243] [cursor=pointer]:
+                    - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/s3
+                    - menuitem "S3" [disabled] [ref=e244]:
+                      - paragraph [ref=e246]: S3
+        - separator [disabled] [ref=e115]:
+          - img [ref=e117]
+        - main [ref=e126]:
+          - generic [ref=e247]:
+            - generic [ref=e249]:
+              - generic [ref=e250]:
+                - heading "Files" [level=1] [ref=e251]
+                - generic [ref=e252]: General file storage for most types of digital content
+              - link "Docs" [ref=e254] [cursor=pointer]:
+                - /url: https://supabase.com/docs/guides/storage/buckets/fundamentals
+                - img [ref=e256]
+                - generic [ref=e259]: Docs
+            - navigation [ref=e262]:
+              - menu [ref=e263]:
+                - listitem [ref=e264]:
+                  - link "Buckets" [ref=e265] [cursor=pointer]:
+                    - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/files
+                - listitem [ref=e266]:
+                  - link "Settings" [ref=e267] [cursor=pointer]:
+                    - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/files/settings
+                - listitem [ref=e268]:
+                  - link "Policies" [ref=e269] [cursor=pointer]:
+                    - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/files/policies
+          - generic [ref=e272]:
+            - generic [ref=e367]:
+              - generic [ref=e368]:
+                - group [ref=e369]:
+                  - textbox "Search for a bucket" [ref=e370]
+                  - group [ref=e371]:
+                    - img [ref=e372]
+                - button "Sorted by created at" [ref=e375] [cursor=pointer]:
+                  - img [ref=e377]
+                  - generic [ref=e379]: Sorted by created at
+              - button "New bucket" [ref=e497] [cursor=pointer]:
+                - img [ref=e382]
+                - generic [ref=e383]: New bucket
+            - table [ref=e387]:
+              - rowgroup [ref=e388]:
+                - row "Icon Name Policies File size limit Allowed MIME types Actions" [ref=e389]:
+                  - columnheader "Icon" [ref=e390]:
+                    - generic [ref=e391]: Icon
+                  - columnheader "Name" [ref=e392]
+                  - columnheader "Policies" [ref=e393]
+                  - columnheader "File size limit" [ref=e394]
+                  - columnheader "Allowed MIME types" [ref=e395]
+                  - columnheader "Actions" [ref=e396]:
+                    - generic [ref=e397]: Actions
+              - rowgroup [ref=e398]:
+                - row "bucket icon videos Public 0 Unset (50 MB) Any Go to bucket details" [ref=e498] [cursor=pointer]:
+                  - cell "bucket icon" [ref=e499]:
+                    - img "bucket icon" [ref=e500]
+                  - cell "videos Public" [ref=e502]:
+                    - generic [ref=e503]:
+                      - paragraph [ref=e504]: videos
+                      - generic [ref=e505]: Public
+                  - cell "0" [ref=e506]:
+                    - paragraph [ref=e507]: "0"
+                  - cell "Unset (50 MB)" [ref=e508]:
+                    - paragraph [ref=e509]: Unset (50 MB)
+                  - cell "Any" [ref=e510]:
+                    - paragraph [ref=e511]: Any
+                  - cell "Go to bucket details" [ref=e512]:
+                    - img [ref=e514]
+                    - button "Go to bucket details" [ref=e516]
+                - row "bucket icon audio Public 0 Unset (50 MB) Any Go to bucket details" [ref=e399] [cursor=pointer]:
+                  - cell "bucket icon" [ref=e400]:
+                    - img "bucket icon" [ref=e401]
+                  - cell "audio Public" [ref=e403]:
+                    - generic [ref=e404]:
+                      - paragraph [ref=e405]: audio
+                      - generic [ref=e406]: Public
+                  - cell "0" [ref=e407]:
+                    - paragraph [ref=e408]: "0"
+                  - cell "Unset (50 MB)" [ref=e409]:
+                    - paragraph [ref=e410]: Unset (50 MB)
+                  - cell "Any" [ref=e411]:
+                    - paragraph [ref=e412]: Any
+                  - cell "Go to bucket details" [ref=e413]:
+                    - img [ref=e415]
+                    - button "Go to bucket details" [ref=e417]
+  - alert [ref=e131]: Files | Storage | videocreator | vahehakobyanv org | Supabase

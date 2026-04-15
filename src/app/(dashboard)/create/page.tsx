@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,6 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import {
   Sparkles,
@@ -21,8 +22,12 @@ import {
   Zap,
   TrendingUp,
   ArrowRight,
+  Layout,
+  Flame,
 } from "lucide-react";
-import type { ContentIdea } from "@/types";
+import type { ContentIdea, ScriptTemplate } from "@/types";
+import TrendingTopics from "@/components/create/trending-topics";
+import ScriptTemplates from "@/components/create/script-templates";
 
 const tones = [
   { value: "funny", label: "Funny", emoji: "😂" },
@@ -32,6 +37,17 @@ const tones = [
 ];
 
 export default function CreatePage() {
+  return (
+    <Suspense>
+      <CreatePageContent />
+    </Suspense>
+  );
+}
+
+function CreatePageContent() {
+  const searchParams = useSearchParams();
+  const isTrending = searchParams.get("mode") === "trending";
+
   const [topic, setTopic] = useState("");
   const [language, setLanguage] = useState<"en" | "ru">("en");
   const [tone, setTone] = useState<string>("motivational");
@@ -39,6 +55,8 @@ export default function CreatePage() {
   const [ideas, setIdeas] = useState<ContentIdea[]>([]);
   const [loading, setLoading] = useState(false);
   const [creating, setCreating] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState(isTrending ? "trending" : "topic");
+  const [selectedTemplate, setSelectedTemplate] = useState<ScriptTemplate | null>(null);
   const router = useRouter();
 
   const generateIdeas = async () => {
@@ -50,7 +68,13 @@ export default function CreatePage() {
       const res = await fetch("/api/ideas", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ topic, language, tone, viralMode }),
+        body: JSON.stringify({
+          topic,
+          language,
+          tone,
+          viralMode,
+          templateId: selectedTemplate?.id,
+        }),
       });
       const data = await res.json();
       if (data.ideas) setIdeas(data.ideas);
@@ -70,7 +94,6 @@ export default function CreatePage() {
 
     if (!user) return;
 
-    // Create project
     const { data: project, error } = await supabase
       .from("projects")
       .insert({
@@ -89,7 +112,6 @@ export default function CreatePage() {
       return;
     }
 
-    // Store the selected idea context for script generation
     await supabase.from("scripts").insert({
       project_id: project.id,
       hook: idea.hook,
@@ -106,109 +128,168 @@ export default function CreatePage() {
     router.push(`/project/${project.id}`);
   };
 
+  const handleSelectTopic = (t: string) => {
+    setTopic(t);
+    setActiveTab("topic");
+    setSelectedTemplate(null);
+  };
+
+  const handleSelectTemplate = (template: ScriptTemplate) => {
+    setSelectedTemplate(template);
+    setTopic(template.name);
+    setActiveTab("topic");
+  };
+
   return (
-    <div className="p-8 max-w-4xl mx-auto">
-      <div className="mb-8">
+    <div className="p-4 md:p-8 max-w-4xl mx-auto">
+      <div className="mb-8 animate-slide-up">
         <h1 className="text-3xl font-bold mb-2">Create Viral Content</h1>
         <p className="text-muted-foreground">
-          Start with a topic and let AI generate viral ideas for you
+          Start with a topic, template, or trending idea
         </p>
       </div>
 
-      {/* Input Form */}
-      <Card className="mb-8">
-        <CardContent className="p-6 space-y-6">
-          <div className="space-y-2">
-            <Label htmlFor="topic">Topic</Label>
-            <Input
-              id="topic"
-              placeholder='e.g. "make money online", "fitness tips", "dating advice"'
-              value={topic}
-              onChange={(e) => setTopic(e.target.value)}
-              className="text-lg py-6"
-            />
-          </div>
+      {/* Main Tabs */}
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-8">
+        <TabsList className="grid w-full grid-cols-3 mb-6">
+          <TabsTrigger value="topic" className="gap-2">
+            <Sparkles className="w-4 h-4" />
+            From Topic
+          </TabsTrigger>
+          <TabsTrigger value="templates" className="gap-2">
+            <Layout className="w-4 h-4" />
+            Templates
+          </TabsTrigger>
+          <TabsTrigger value="trending" className="gap-2">
+            <Flame className="w-4 h-4" />
+            Trending
+          </TabsTrigger>
+        </TabsList>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label>Language</Label>
-              <Select
-                value={language}
-                onValueChange={(v) => setLanguage(v as "en" | "ru")}
-              >
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="en">English</SelectItem>
-                  <SelectItem value="ru">Russian</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+        {/* From Topic Tab */}
+        <TabsContent value="topic" className="animate-fade-in">
+          <Card className="mb-8">
+            <CardContent className="p-6 space-y-6">
+              {/* Selected template indicator */}
+              {selectedTemplate && (
+                <div className="flex items-center gap-2 p-3 rounded-lg bg-primary/10 border border-primary/20">
+                  <span className="text-lg">{selectedTemplate.emoji}</span>
+                  <span className="text-sm font-medium">
+                    Using template: {selectedTemplate.name}
+                  </span>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="ml-auto h-6 text-xs"
+                    onClick={() => setSelectedTemplate(null)}
+                  >
+                    Clear
+                  </Button>
+                </div>
+              )}
 
-            <div className="space-y-2">
-              <Label>Tone</Label>
-              <Select value={tone} onValueChange={(v) => v && setTone(v)}>
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  {tones.map((t) => (
-                    <SelectItem key={t.value} value={t.value}>
-                      {t.emoji} {t.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-
-          {/* Viral Mode Toggle */}
-          <div
-            className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
-              viralMode
-                ? "border-primary bg-primary/5 glow"
-                : "border-border hover:border-primary/30"
-            }`}
-            onClick={() => setViralMode(!viralMode)}
-          >
-            <div className="flex items-center gap-3">
-              <Zap
-                className={`w-5 h-5 ${viralMode ? "text-primary" : "text-muted-foreground"}`}
-              />
-              <div>
-                <p className="font-semibold">Make It Viral Mode</p>
-                <p className="text-sm text-muted-foreground">
-                  Generate controversial, attention-grabbing hooks
-                </p>
+              <div className="space-y-2">
+                <Label htmlFor="topic">Topic</Label>
+                <Input
+                  id="topic"
+                  placeholder='e.g. "make money online", "fitness tips", "dating advice"'
+                  value={topic}
+                  onChange={(e) => setTopic(e.target.value)}
+                  className="text-lg py-6"
+                />
               </div>
-              {viralMode && <Badge className="ml-auto">ON</Badge>}
-            </div>
-          </div>
 
-          <Button
-            onClick={generateIdeas}
-            disabled={loading || !topic.trim()}
-            className="w-full py-6 text-lg glow"
-          >
-            {loading ? (
-              <>
-                <Loader2 className="w-5 h-5 animate-spin mr-2" />
-                Generating Ideas...
-              </>
-            ) : (
-              <>
-                <Sparkles className="w-5 h-5 mr-2" />
-                Generate 5 Viral Ideas
-              </>
-            )}
-          </Button>
-        </CardContent>
-      </Card>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label>Language</Label>
+                  <Select
+                    value={language}
+                    onValueChange={(v) => setLanguage(v as "en" | "ru")}
+                  >
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="en">English</SelectItem>
+                      <SelectItem value="ru">Russian</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
 
-      {/* Ideas */}
+                <div className="space-y-2">
+                  <Label>Tone</Label>
+                  <Select value={tone} onValueChange={(v) => v && setTone(v)}>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {tones.map((t) => (
+                        <SelectItem key={t.value} value={t.value}>
+                          {t.emoji} {t.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              <div
+                className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
+                  viralMode
+                    ? "border-primary bg-primary/5 glow"
+                    : "border-border hover:border-primary/30"
+                }`}
+                onClick={() => setViralMode(!viralMode)}
+              >
+                <div className="flex items-center gap-3">
+                  <Zap
+                    className={`w-5 h-5 ${viralMode ? "text-primary" : "text-muted-foreground"}`}
+                  />
+                  <div>
+                    <p className="font-semibold">Make It Viral Mode</p>
+                    <p className="text-sm text-muted-foreground">
+                      Generate controversial, attention-grabbing hooks
+                    </p>
+                  </div>
+                  {viralMode && <Badge className="ml-auto">ON</Badge>}
+                </div>
+              </div>
+
+              <Button
+                onClick={generateIdeas}
+                disabled={loading || !topic.trim()}
+                className="w-full py-6 text-lg glow"
+              >
+                {loading ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                    Generating Ideas...
+                  </>
+                ) : (
+                  <>
+                    <Sparkles className="w-5 h-5 mr-2" />
+                    Generate 5 Viral Ideas
+                  </>
+                )}
+              </Button>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* Templates Tab */}
+        <TabsContent value="templates" className="animate-fade-in">
+          <ScriptTemplates onSelectTemplate={handleSelectTemplate} />
+        </TabsContent>
+
+        {/* Trending Tab */}
+        <TabsContent value="trending" className="animate-fade-in">
+          <TrendingTopics onSelectTopic={handleSelectTopic} />
+        </TabsContent>
+      </Tabs>
+
+      {/* Ideas Results */}
       {ideas.length > 0 && (
-        <div>
+        <div className="animate-slide-up">
           <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
             <TrendingUp className="w-5 h-5 text-primary" />
             Your Viral Ideas
@@ -217,7 +298,8 @@ export default function CreatePage() {
             {ideas.map((idea, i) => (
               <Card
                 key={i}
-                className="hover:border-primary/50 transition-colors"
+                className="hover:border-primary/50 transition-colors animate-slide-up"
+                style={{ animationDelay: `${i * 0.05}s` }}
               >
                 <CardHeader className="pb-2">
                   <CardTitle className="text-lg flex items-center justify-between">

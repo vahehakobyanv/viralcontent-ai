@@ -1,0 +1,138 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e6]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - link "Supabase" [ref=e9] [cursor=pointer]:
+            - /url: /dashboard/org/rvqmgqborodtbjtcitin
+            - img "Supabase" [ref=e10]
+          - generic [ref=e12]:
+            - img [ref=e14]
+            - generic [ref=e16]:
+              - link "videocreator" [ref=e17] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk
+                - img [ref=e18]
+                - generic "videocreator" [ref=e21]
+              - button [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+            - img [ref=e28]
+          - button "Connect" [ref=e32] [cursor=pointer]:
+            - img [ref=e34]
+            - generic [ref=e36]: Connect
+        - generic [ref=e37]:
+          - generic [ref=e39] [cursor=pointer]: Feedback
+          - generic [ref=e40]:
+            - button "Search..." [ref=e41] [cursor=pointer]:
+              - generic [ref=e42]:
+                - img [ref=e43]
+                - paragraph [ref=e46]: Search...
+              - generic [ref=e48]: ⌘ K
+            - button [ref=e49] [cursor=pointer]:
+              - img [ref=e51]
+            - button [ref=e55] [cursor=pointer]:
+              - img [ref=e57]
+            - button [ref=e59] [cursor=pointer]:
+              - img [ref=e61]
+            - button [ref=e63] [cursor=pointer]:
+              - img [ref=e67]
+          - button "vahehakobyanv" [ref=e70] [cursor=pointer]:
+            - img "vahehakobyanv" [ref=e72]
+    - generic [ref=e73]:
+      - generic [ref=e77]:
+        - list [ref=e80]:
+          - generic [ref=e81]:
+            - listitem [ref=e82]:
+              - link "Project Overview" [ref=e83] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk
+                - img [ref=e84]
+                - generic: Project Overview
+            - listitem [ref=e86]:
+              - link "Table Editor" [ref=e87] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/editor
+                - img [ref=e88]
+                - generic: Table Editor
+            - listitem [ref=e90]:
+              - link "SQL Editor" [ref=e91] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/sql
+                - img [ref=e92]
+                - generic: SQL Editor
+          - generic [ref=e94]:
+            - listitem [ref=e95]:
+              - link "Database" [ref=e96] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/database/schemas
+                - img [ref=e97]
+                - generic: Database
+            - listitem [ref=e101]:
+              - link "Authentication" [ref=e102] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/auth/users
+                - img [ref=e103]
+                - generic: Authentication
+            - listitem [ref=e105]:
+              - link "Storage" [ref=e106] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/storage/files
+                - img [ref=e107]
+                - generic: Storage
+            - listitem [ref=e109]:
+              - link "Edge Functions" [ref=e110] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/functions
+                - img [ref=e111]
+                - generic: Edge Functions
+            - listitem [ref=e116]:
+              - link "Realtime" [ref=e117] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/realtime/inspector
+                - img [ref=e118]
+                - generic: Realtime
+          - generic [ref=e120]:
+            - listitem [ref=e122]:
+              - link "Advisors" [ref=e123] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/advisors/security
+                - img [ref=e124]
+                - generic: Advisors
+            - listitem [ref=e126]:
+              - link "Observability" [ref=e127] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/observability
+                - img [ref=e128]
+                - generic: Observability
+            - listitem [ref=e136]:
+              - link "Logs" [ref=e137] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/logs/explorer
+                - img [ref=e138]
+                - generic: Logs
+            - listitem [ref=e139]:
+              - link "Integrations" [ref=e140] [cursor=pointer]:
+                - /url: /dashboard/project/qhyauvqdzheswgsiahtk/integrations
+                - img [ref=e141]
+                - generic: Integrations
+          - listitem [ref=e145]:
+            - link "Project Settings" [ref=e146] [cursor=pointer]:
+              - /url: /dashboard/project/qhyauvqdzheswgsiahtk/settings/general
+              - img [ref=e147]
+              - generic: Project Settings
+        - button [ref=e152] [cursor=pointer]:
+          - img [ref=e154]
+      - generic [ref=e161]:
+        - generic [ref=e165]:
+          - heading "Integrations" [level=4] [ref=e167]
+          - generic [ref=e168]:
+            - generic [ref=e171]: Explore
+            - generic [ref=e178]: Installed
+        - separator [disabled] [ref=e183]:
+          - img [ref=e185]
+        - main [ref=e194]:
+          - generic [ref=e195]:
+            - navigation "breadcrumb" [ref=e197]:
+              - list [ref=e198]:
+                - listitem [ref=e199]:
+                  - link "Integrations" [ref=e200] [cursor=pointer]:
+                    - /url: /dashboard/project/qhyauvqdzheswgsiahtk/integrations
+                - listitem [ref=e201]:
+                  - img [ref=e202]
+                - listitem [ref=e204]:
+                  - link "Data API" [disabled] [ref=e205]
+            - heading [level=1] [ref=e209]
+            - navigation [ref=e215]:
+              - menu [ref=e216]:
+                - listitem [ref=e217]:
+                  - link "Overview" [ref=e218] [cursor=pointer]:
+                    - /url: /dashboard/project/qhyauvqdzheswgsiahtk/integrations/data_api/overview
+  - alert [ref=e226]: Integrations | Supabase

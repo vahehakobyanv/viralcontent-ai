@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
+import { useMediaQuery } from "@/hooks/use-media-query";
 import {
   LayoutDashboard,
   Plus,
@@ -12,17 +13,27 @@ import {
   LogOut,
   Sparkles,
   TrendingUp,
+  Calendar,
 } from "lucide-react";
 
 const navItems = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-  { label: "Create New", href: "/create", icon: Plus },
+  { label: "Create", href: "/create", icon: Plus },
   { label: "Trending", href: "/create?mode=trending", icon: TrendingUp },
+  { label: "Calendar", href: "/calendar", icon: Calendar },
+];
+
+const mobileNavItems = [
+  { label: "Home", href: "/dashboard", icon: LayoutDashboard },
+  { label: "Create", href: "/create", icon: Plus },
+  { label: "Trending", href: "/create?mode=trending", icon: TrendingUp },
+  { label: "Settings", href: "/settings", icon: Settings },
 ];
 
 export function Sidebar() {
   const pathname = usePathname();
   const router = useRouter();
+  const isMobile = useMediaQuery("(max-width: 767px)");
 
   const handleSignOut = async () => {
     const supabase = createClient();
@@ -30,6 +41,37 @@ export function Sidebar() {
     router.push("/login");
   };
 
+  // Mobile bottom nav
+  if (isMobile) {
+    return (
+      <nav className="fixed bottom-0 left-0 right-0 z-40 bg-card/95 backdrop-blur-lg border-t border-border/50 px-2 pb-[env(safe-area-inset-bottom)]">
+        <div className="flex items-center justify-around py-2">
+          {mobileNavItems.map((item) => {
+            const isActive =
+              pathname === item.href ||
+              (item.href.includes("?") && pathname === item.href.split("?")[0]);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "flex flex-col items-center gap-1 px-3 py-1.5 rounded-lg transition-colors min-w-[60px]",
+                  isActive
+                    ? "text-primary"
+                    : "text-muted-foreground"
+                )}
+              >
+                <item.icon className="w-5 h-5" />
+                <span className="text-[10px] font-medium">{item.label}</span>
+              </Link>
+            );
+          })}
+        </div>
+      </nav>
+    );
+  }
+
+  // Desktop sidebar
   return (
     <aside className="w-64 border-r border-border/50 bg-card/50 flex flex-col h-screen sticky top-0">
       {/* Logo */}
@@ -43,7 +85,9 @@ export function Sidebar() {
       {/* Nav */}
       <nav className="flex-1 px-3 space-y-1">
         {navItems.map((item) => {
-          const isActive = pathname === item.href;
+          const isActive =
+            pathname === item.href ||
+            (item.href.includes("?") && pathname === item.href.split("?")[0]);
           return (
             <Link
               key={item.href}
@@ -65,8 +109,13 @@ export function Sidebar() {
       {/* Bottom */}
       <div className="p-3 space-y-1 border-t border-border/50">
         <Link
-          href="/dashboard"
-          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+          href="/settings"
+          className={cn(
+            "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors",
+            pathname === "/settings"
+              ? "bg-primary/10 text-primary font-medium"
+              : "text-muted-foreground hover:text-foreground hover:bg-accent"
+          )}
         >
           <Settings className="w-4 h-4" />
           Settings
