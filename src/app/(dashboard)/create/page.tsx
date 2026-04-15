@@ -24,10 +24,12 @@ import {
   ArrowRight,
   Layout,
   Flame,
+  Link2,
 } from "lucide-react";
 import type { ContentIdea, ScriptTemplate } from "@/types";
 import TrendingTopics from "@/components/create/trending-topics";
 import ScriptTemplates from "@/components/create/script-templates";
+import UrlToVideo from "@/app/(dashboard)/create/url-to-video";
 
 const tones = [
   { value: "funny", label: "Funny", emoji: "😂" },
@@ -151,18 +153,22 @@ function CreatePageContent() {
 
       {/* Main Tabs */}
       <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-8">
-        <TabsList className="grid w-full grid-cols-3 mb-6">
-          <TabsTrigger value="topic" className="gap-2">
+        <TabsList className="grid w-full grid-cols-4 mb-6">
+          <TabsTrigger value="topic" className="gap-1 text-xs sm:text-sm">
             <Sparkles className="w-4 h-4" />
-            From Topic
+            <span className="hidden sm:inline">From</span> Topic
           </TabsTrigger>
-          <TabsTrigger value="templates" className="gap-2">
+          <TabsTrigger value="templates" className="gap-1 text-xs sm:text-sm">
             <Layout className="w-4 h-4" />
             Templates
           </TabsTrigger>
-          <TabsTrigger value="trending" className="gap-2">
+          <TabsTrigger value="trending" className="gap-1 text-xs sm:text-sm">
             <Flame className="w-4 h-4" />
             Trending
+          </TabsTrigger>
+          <TabsTrigger value="url" className="gap-1 text-xs sm:text-sm">
+            <Link2 className="w-4 h-4" />
+            From URL
           </TabsTrigger>
         </TabsList>
 
@@ -284,6 +290,11 @@ function CreatePageContent() {
         {/* Trending Tab */}
         <TabsContent value="trending" className="animate-fade-in">
           <TrendingTopics onSelectTopic={handleSelectTopic} />
+        </TabsContent>
+
+        {/* URL to Video Tab */}
+        <TabsContent value="url" className="animate-fade-in">
+          <UrlToVideo />
         </TabsContent>
       </Tabs>
 

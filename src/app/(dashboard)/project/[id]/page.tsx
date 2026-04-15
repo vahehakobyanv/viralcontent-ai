@@ -36,6 +36,9 @@ import ViralScoreCard from "@/components/project/viral-score";
 import HashtagGenerator from "@/components/project/hashtag-generator";
 import CaptionPreview from "@/components/project/caption-preview";
 import ShareDialog from "@/components/project/share-dialog";
+import BRollPicker from "@/components/project/broll-picker";
+import ThumbnailGenerator from "@/components/project/thumbnail-generator";
+import MultiPlatformExport from "@/components/project/multi-platform-export";
 
 const steps = [
   { key: "script", label: "Script", icon: FileText },
@@ -384,6 +387,13 @@ export default function ProjectPage() {
         </div>
       )}
 
+      {/* B-Roll Picker */}
+      {project.topic && (
+        <div className="mb-6 animate-slide-up" style={{ animationDelay: "0.38s" }}>
+          <BRollPicker topic={project.topic} onSelect={(clips) => console.log("Selected B-Roll:", clips)} />
+        </div>
+      )}
+
       {/* Video Section */}
       <Card className="mb-6 animate-slide-up" style={{ animationDelay: "0.4s" }}>
         <CardHeader>
@@ -414,6 +424,18 @@ export default function ProjectPage() {
           )}
         </CardContent>
       </Card>
+
+      {/* Thumbnail Generator */}
+      {editedScript.trim() && (
+        <div className="mb-6 animate-slide-up" style={{ animationDelay: "0.45s" }}>
+          <ThumbnailGenerator topic={project.topic} script={editedScript} />
+        </div>
+      )}
+
+      {/* Multi-Platform Export */}
+      <div className="mb-6 animate-slide-up" style={{ animationDelay: "0.5s" }}>
+        <MultiPlatformExport projectId={projectId} videoUrl={video?.video_url} />
+      </div>
     </div>
   );
 }

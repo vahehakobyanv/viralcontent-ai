@@ -14,6 +14,7 @@ import {
   Sparkles,
   TrendingUp,
   Calendar,
+  Palette,
 } from "lucide-react";
 
 const navItems = [
@@ -21,6 +22,7 @@ const navItems = [
   { label: "Create", href: "/create", icon: Plus },
   { label: "Trending", href: "/create?mode=trending", icon: TrendingUp },
   { label: "Calendar", href: "/calendar", icon: Calendar },
+  { label: "Brand Kit", href: "/brand-kit", icon: Palette },
 ];
 
 const mobileNavItems = [
