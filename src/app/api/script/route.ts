@@ -1,11 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { openai } from "@/lib/openai";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+import { getOpenAI } from "@/lib/openai";
+import { getAdminSupabase } from "@/lib/supabase/admin";
 
 export async function POST(req: NextRequest) {
   try {
@@ -16,7 +11,7 @@ export async function POST(req: NextRequest) {
         ? "Write the ENTIRE script in Russian. Use modern Russian slang, short punchy sentences. Make it sound natural for Russian TikTok."
         : "Write in English. Use short, punchy sentences.";
 
-    const response = await openai.chat.completions.create({
+    const response = await getOpenAI().chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
         {
@@ -56,6 +51,7 @@ Respond ONLY with JSON, no other text.`,
     const scriptData = JSON.parse(cleaned);
 
     // Save to database
+    const supabase = getAdminSupabase();
     const { data: savedScript } = await supabase
       .from("scripts")
       .upsert(

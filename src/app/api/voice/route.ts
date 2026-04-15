@@ -1,10 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+import { getAdminSupabase } from "@/lib/supabase/admin";
 
 // Voice ID mapping for ElevenLabs
 const voiceMap: Record<string, string> = {
@@ -20,6 +15,8 @@ export async function POST(req: NextRequest) {
     const { projectId, text, voiceId, speed } = await req.json();
 
     const elevenLabsVoiceId = voiceMap[voiceId] || voiceMap["female-energetic"];
+
+    const supabase = getAdminSupabase();
 
     // Call ElevenLabs API
     const response = await fetch(

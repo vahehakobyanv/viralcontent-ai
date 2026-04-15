@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
+import { getAdminSupabase } from "@/lib/supabase/admin";
 import { exec } from "child_process";
 import { promisify } from "util";
 import { writeFile, unlink, mkdir } from "fs/promises";
@@ -7,11 +7,6 @@ import { join } from "path";
 import { tmpdir } from "os";
 
 const execAsync = promisify(exec);
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
 
 async function fetchStockVideo(topic: string): Promise<Buffer | null> {
   const apiKey = process.env.PEXELS_API_KEY;
@@ -58,6 +53,7 @@ async function generatePlaceholderVideo(
 
 export async function POST(req: NextRequest) {
   try {
+    const supabase = getAdminSupabase();
     const { projectId, topic } = await req.json();
 
     // Fetch project data
