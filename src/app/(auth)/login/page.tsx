@@ -32,6 +32,8 @@ export default function LoginPage() {
       setError(error.message);
       setLoading(false);
     } else {
+      // Ensure profile exists (safety net, uses admin API to bypass RLS)
+      await fetch("/api/auth/ensure-profile", { method: "POST" });
       router.push("/dashboard");
     }
   };
