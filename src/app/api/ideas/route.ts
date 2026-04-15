@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
       : "";
 
     const response = await getOpenAI().chat.completions.create({
-      model: "gpt-4o-mini",
+      model: "llama-3.3-70b-versatile",
       messages: [
         {
           role: "system",

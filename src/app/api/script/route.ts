@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
         : "Write in English. Use short, punchy sentences.";
 
     const response = await getOpenAI().chat.completions.create({
-      model: "gpt-4o-mini",
+      model: "llama-3.3-70b-versatile",
       messages: [
         {
           role: "system",

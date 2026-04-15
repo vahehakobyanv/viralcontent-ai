@@ -1,12 +1,12 @@
-import OpenAI from "openai";
+import Groq from "groq-sdk";
 
-let _openai: OpenAI | null = null;
+let _groq: Groq | null = null;
 
 export function getOpenAI() {
-  if (!_openai) {
-    _openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
+  if (!_groq) {
+    _groq = new Groq({
+      apiKey: process.env.GROQ_API_KEY,
     });
   }
-  return _openai;
+  return _groq;
 }

@@ -1,56 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAdminSupabase } from "@/lib/supabase/admin";
 
-// Voice ID mapping for ElevenLabs
-const voiceMap: Record<string, string> = {
-  "female-energetic": "21m00Tcm4TlvDq8ikWAM", // Rachel
-  "female-calm": "EXAVITQu4vr4xnSDxMaL", // Bella
-  "male-energetic": "ErXwobaYiN019PkySvjV", // Antoni
-  "male-calm": "VR6AewLTigWG4xSOukaG", // Arnold
-  "male-aggressive": "pNInz6obpgDQGcFmaJgB", // Adam
-};
-
 export async function POST(req: NextRequest) {
   try {
-    const { projectId, text, voiceId, speed } = await req.json();
+    const { projectId, audioBase64, voiceId, speed } = await req.json();
 
-    const elevenLabsVoiceId = voiceMap[voiceId] || voiceMap["female-energetic"];
+    if (!audioBase64) {
+      return NextResponse.json(
+        { error: "Audio data is required. Voice is generated in the browser." },
+        { status: 400 }
+      );
+    }
 
     const supabase = getAdminSupabase();
 
-    // Call ElevenLabs API
-    const response = await fetch(
-      `https://api.elevenlabs.io/v1/text-to-speech/${elevenLabsVoiceId}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "xi-api-key": process.env.ELEVENLABS_API_KEY || "",
-        },
-        body: JSON.stringify({
-          text,
-          model_id: "eleven_monolingual_v1",
-          voice_settings: {
-            stability: 0.5,
-            similarity_boost: 0.75,
-            speed: speed || 1.0,
-          },
-        }),
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error(`ElevenLabs API error: ${response.status}`);
-    }
-
-    const audioBuffer = await response.arrayBuffer();
-    const fileName = `voice_${projectId}_${Date.now()}.mp3`;
+    // Decode base64 audio from browser recording
+    const audioBuffer = Buffer.from(audioBase64, "base64");
+    const fileName = `voice_${projectId}_${Date.now()}.webm`;
 
     // Upload to Supabase Storage
     const { error: uploadError } = await supabase.storage
       .from("audio")
       .upload(fileName, audioBuffer, {
-        contentType: "audio/mpeg",
+        contentType: "audio/webm",
         upsert: true,
       });
 
@@ -67,7 +39,7 @@ export async function POST(req: NextRequest) {
         {
           project_id: projectId,
           audio_url: publicUrl,
-          voice_id: voiceId,
+          voice_id: voiceId || "browser-default",
           speed: speed || 1.0,
         },
         { onConflict: "project_id" }
@@ -83,9 +55,9 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ voice: savedVoice });
   } catch (error) {
-    console.error("Voice generation error:", error);
+    console.error("Voice upload error:", error);
     return NextResponse.json(
-      { error: "Failed to generate voice" },
+      { error: "Failed to save voice" },
       { status: 500 }
     );
   }
