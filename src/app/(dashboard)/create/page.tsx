@@ -25,11 +25,13 @@ import {
   Layout,
   Flame,
   Link2,
+  MicIcon,
 } from "lucide-react";
 import type { ContentIdea, ScriptTemplate } from "@/types";
 import TrendingTopics from "@/components/create/trending-topics";
 import ScriptTemplates from "@/components/create/script-templates";
 import UrlToVideo from "@/app/(dashboard)/create/url-to-video";
+import VoiceMemoInput from "@/components/create/voice-memo-input";
 
 const tones = [
   { value: "funny", label: "Funny", emoji: "😂" },
@@ -153,22 +155,26 @@ function CreatePageContent() {
 
       {/* Main Tabs */}
       <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-8">
-        <TabsList className="grid w-full grid-cols-4 mb-6">
+        <TabsList className="grid w-full grid-cols-5 mb-6">
           <TabsTrigger value="topic" className="gap-1 text-xs sm:text-sm">
-            <Sparkles className="w-4 h-4" />
+            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
             <span className="hidden sm:inline">From</span> Topic
           </TabsTrigger>
           <TabsTrigger value="templates" className="gap-1 text-xs sm:text-sm">
-            <Layout className="w-4 h-4" />
+            <Layout className="w-3 h-3 sm:w-4 sm:h-4" />
             Templates
           </TabsTrigger>
           <TabsTrigger value="trending" className="gap-1 text-xs sm:text-sm">
-            <Flame className="w-4 h-4" />
+            <Flame className="w-3 h-3 sm:w-4 sm:h-4" />
             Trending
           </TabsTrigger>
           <TabsTrigger value="url" className="gap-1 text-xs sm:text-sm">
-            <Link2 className="w-4 h-4" />
-            From URL
+            <Link2 className="w-3 h-3 sm:w-4 sm:h-4" />
+            URL
+          </TabsTrigger>
+          <TabsTrigger value="voice" className="gap-1 text-xs sm:text-sm">
+            <MicIcon className="w-3 h-3 sm:w-4 sm:h-4" />
+            Voice
           </TabsTrigger>
         </TabsList>
 
@@ -295,6 +301,11 @@ function CreatePageContent() {
         {/* URL to Video Tab */}
         <TabsContent value="url" className="animate-fade-in">
           <UrlToVideo />
+        </TabsContent>
+
+        {/* Voice Memo Tab */}
+        <TabsContent value="voice" className="animate-fade-in">
+          <VoiceMemoInput />
         </TabsContent>
       </Tabs>
 

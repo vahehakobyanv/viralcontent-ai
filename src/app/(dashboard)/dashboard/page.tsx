@@ -22,6 +22,8 @@ import { ContinueCard } from "@/components/dashboard/continue-card";
 import { ActivityFeed } from "@/components/dashboard/activity-feed";
 import { OnboardingModal } from "@/components/onboarding/onboarding-modal";
 import { useUiStore } from "@/store/ui";
+import DailyFeed from "@/components/dashboard/daily-feed";
+import CoachCard from "@/components/dashboard/coach-card";
 
 // Generate simple sparkline data from projects for the last 7 days
 function getLast7DaysCounts(items: { created_at: string }[]): number[] {
@@ -198,11 +200,23 @@ export default function DashboardPage() {
             ))}
           </div>
 
+          {/* Daily Trending Feed */}
+          <div className="mb-8 animate-slide-up" style={{ animationDelay: "0.13s" }}>
+            <DailyFeed />
+          </div>
+
+          {/* AI Content Coach */}
+          {projects.length > 2 && (
+            <div className="mb-8 animate-slide-up" style={{ animationDelay: "0.15s" }}>
+              <CoachCard projects={projects} />
+            </div>
+          )}
+
           {/* Activity Feed */}
           {projects.length > 0 && (
             <div
               className="mb-8 animate-slide-up"
-              style={{ animationDelay: "0.15s" }}
+              style={{ animationDelay: "0.18s" }}
             >
               <ActivityFeed projects={projects} />
             </div>

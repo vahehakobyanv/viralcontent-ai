@@ -37,6 +37,8 @@ import HashtagGenerator from "@/components/project/hashtag-generator";
 import CaptionPreview from "@/components/project/caption-preview";
 import ShareDialog from "@/components/project/share-dialog";
 import BRollPicker from "@/components/project/broll-picker";
+import ABVariants from "@/components/project/ab-variants";
+import ChatEditor from "@/components/chat-editor/chat-editor";
 import ThumbnailGenerator from "@/components/project/thumbnail-generator";
 import MultiPlatformExport from "@/components/project/multi-platform-export";
 
@@ -294,6 +296,19 @@ export default function ProjectPage() {
         </CardContent>
       </Card>
 
+      {/* A/B Variants */}
+      {editedScript.trim() && project && (
+        <div className="mb-6 animate-slide-up" style={{ animationDelay: "0.13s" }}>
+          <ABVariants
+            script={editedScript}
+            topic={project.topic}
+            tone={project.tone}
+            language={project.language}
+            onSelectVariant={(text) => setEditedScript(text)}
+          />
+        </div>
+      )}
+
       {/* Viral Score */}
       {editedScript.trim() && (
         <div className="mb-6 animate-slide-up" style={{ animationDelay: "0.15s" }}>
@@ -436,6 +451,18 @@ export default function ProjectPage() {
       <div className="mb-6 animate-slide-up" style={{ animationDelay: "0.5s" }}>
         <MultiPlatformExport projectId={projectId} videoUrl={video?.video_url} />
       </div>
+
+      {/* Conversational Editor */}
+      {project && (
+        <ChatEditor
+          projectId={projectId}
+          currentScript={editedScript}
+          onScriptUpdate={(newScript) => setEditedScript(newScript)}
+          topic={project.topic}
+          tone={project.tone}
+          language={project.language}
+        />
+      )}
     </div>
   );
 }

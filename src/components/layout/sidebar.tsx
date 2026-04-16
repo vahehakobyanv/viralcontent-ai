@@ -15,12 +15,16 @@ import {
   TrendingUp,
   Calendar,
   Palette,
+  BarChart3,
+  Layers,
 } from "lucide-react";
 
 const navItems = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { label: "Create", href: "/create", icon: Plus },
   { label: "Trending", href: "/create?mode=trending", icon: TrendingUp },
+  { label: "Series", href: "/series", icon: Layers },
+  { label: "Analytics", href: "/analytics", icon: BarChart3 },
   { label: "Calendar", href: "/calendar", icon: Calendar },
   { label: "Brand Kit", href: "/brand-kit", icon: Palette },
 ];
