@@ -40,6 +40,7 @@ import BRollPicker from "@/components/project/broll-picker";
 import ABVariants from "@/components/project/ab-variants";
 import ChatEditor from "@/components/chat-editor/chat-editor";
 import ThumbnailGenerator from "@/components/project/thumbnail-generator";
+import VideoPreview from "@/components/project/video-preview";
 import MultiPlatformExport from "@/components/project/multi-platform-export";
 
 const steps = [
@@ -399,6 +400,13 @@ export default function ProjectPage() {
       {subtitle && subtitle.captions_json && subtitle.captions_json.length > 0 && (
         <div className="mb-6 animate-slide-up" style={{ animationDelay: "0.35s" }}>
           <CaptionPreview segments={subtitle.captions_json} />
+        </div>
+      )}
+
+      {/* Live Video Preview */}
+      {subtitle && subtitle.captions_json && subtitle.captions_json.length > 0 && (
+        <div className="mb-6 animate-slide-up" style={{ animationDelay: "0.37s" }}>
+          <VideoPreview script={editedScript} segments={subtitle.captions_json} captionStyle="caption-classic" />
         </div>
       )}
 

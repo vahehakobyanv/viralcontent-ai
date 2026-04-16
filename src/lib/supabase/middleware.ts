@@ -36,6 +36,7 @@ export async function updateSession(request: NextRequest) {
     !request.nextUrl.pathname.startsWith('/signup') &&
     !request.nextUrl.pathname.startsWith('/share') &&
     !request.nextUrl.pathname.startsWith('/remix') &&
+    !request.nextUrl.pathname.startsWith('/tools') &&
     !request.nextUrl.pathname.startsWith('/api') &&
     request.nextUrl.pathname !== '/'
   ) {
