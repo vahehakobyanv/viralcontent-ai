@@ -24,6 +24,8 @@ import { OnboardingModal } from "@/components/onboarding/onboarding-modal";
 import { useUiStore } from "@/store/ui";
 import DailyFeed from "@/components/dashboard/daily-feed";
 import CoachCard from "@/components/dashboard/coach-card";
+import ProjectSearch from "@/components/dashboard/project-search";
+import ProductTour from "@/components/tour/product-tour";
 
 // Generate simple sparkline data from projects for the last 7 days
 function getLast7DaysCounts(items: { created_at: string }[]): number[] {
@@ -43,6 +45,7 @@ function getLast7DaysCounts(items: { created_at: string }[]): number[] {
 
 export default function DashboardPage() {
   const [projects, setProjects] = useState<Project[]>([]);
+  const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState({ videos: 0, scripts: 0, voices: 0 });
   const [sparkData, setSparkData] = useState({
@@ -73,6 +76,7 @@ export default function DashboardPage() {
 
       const projectsList = data || [];
       setProjects(projectsList);
+      setFilteredProjects(projectsList);
 
       const projectIds = projectsList.map((p) => p.id);
 
@@ -123,9 +127,12 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-4 md:p-8">
       {/* Onboarding modal */}
       {!onboardingComplete && <OnboardingModal />}
+
+      {/* Product Tour */}
+      <ProductTour hasProjects={projects.length > 0} />
 
       {/* Header */}
       <div
@@ -227,7 +234,12 @@ export default function DashboardPage() {
             className="animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <h2 className="text-xl font-semibold mb-4">Recent Projects</h2>
+            <h2 className="text-xl font-semibold mb-4">Your Projects</h2>
+            {projects.length > 3 && (
+              <div className="mb-4">
+                <ProjectSearch projects={projects} onFilter={setFilteredProjects} />
+              </div>
+            )}
             {projects.length === 0 ? (
               <Card>
                 <CardContent className="p-12 text-center">
@@ -289,7 +301,7 @@ export default function DashboardPage() {
               </Card>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {projects.map((project) => (
+                {(projects.length > 3 ? filteredProjects : projects).map((project) => (
                   <Link key={project.id} href={`/project/${project.id}`}>
                     <Card className="hover:border-primary/50 transition-colors cursor-pointer">
                       <CardContent className="p-5">

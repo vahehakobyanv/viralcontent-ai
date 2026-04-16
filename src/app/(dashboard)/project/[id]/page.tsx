@@ -41,6 +41,7 @@ import ABVariants from "@/components/project/ab-variants";
 import ChatEditor from "@/components/chat-editor/chat-editor";
 import ThumbnailGenerator from "@/components/project/thumbnail-generator";
 import VideoPreview from "@/components/project/video-preview";
+import AiThumbnailImage from "@/components/project/ai-thumbnail-image";
 import MultiPlatformExport from "@/components/project/multi-platform-export";
 
 const steps = [
@@ -452,6 +453,13 @@ export default function ProjectPage() {
       {editedScript.trim() && (
         <div className="mb-6 animate-slide-up" style={{ animationDelay: "0.45s" }}>
           <ThumbnailGenerator topic={project.topic} script={editedScript} />
+        </div>
+      )}
+
+      {/* AI Image Thumbnails (Pollinations) */}
+      {editedScript.trim() && (
+        <div className="mb-6 animate-slide-up" style={{ animationDelay: "0.47s" }}>
+          <AiThumbnailImage topic={project.topic} script={editedScript} />
         </div>
       )}
 

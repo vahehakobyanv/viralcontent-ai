@@ -17,16 +17,22 @@ import {
   Palette,
   BarChart3,
   Layers,
+  Zap,
+  Gift,
+  Crown,
 } from "lucide-react";
 
 const navItems = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { label: "Create", href: "/create", icon: Plus },
+  { label: "Batch", href: "/batch", icon: Zap },
   { label: "Trending", href: "/create?mode=trending", icon: TrendingUp },
   { label: "Series", href: "/series", icon: Layers },
   { label: "Analytics", href: "/analytics", icon: BarChart3 },
   { label: "Calendar", href: "/calendar", icon: Calendar },
   { label: "Brand Kit", href: "/brand-kit", icon: Palette },
+  { label: "Invite", href: "/invite", icon: Gift },
+  { label: "Upgrade", href: "/upgrade", icon: Crown },
 ];
 
 const mobileNavItems = [
